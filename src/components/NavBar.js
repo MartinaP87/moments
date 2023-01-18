@@ -7,9 +7,8 @@ import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
-
   const loggedInIcons = <>{currentUser?.username}</>;
-  const loggedOutIcons = (
+  const loggedOutIcons = 
     <>
       <NavLink
         className={styles.NavLink}
@@ -26,7 +25,7 @@ const NavBar = () => {
         <i className="fas fa-user-plus"></i>Sign up
       </NavLink>
     </>
-  );
+  
 
   return (
     <Navbar className={styles.NavBar} expand="md" fixed="top">

@@ -28,20 +28,13 @@ function SignInForm() {
 
   const history = useHistory();
   const handleSubmit = async (event) => {
-    console.log("WTF")
     event.preventDefault();
-    console.log("PREV")
     try {
-      console.log("WORKS0")
       console.log(signInData)
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
-      console.log("WORKS1")
       setCurrentUser(data.user);
-      console.log("WORKS2")
       history.push("/");
-      console.log("WORKS3")
     } catch (err) {
-      console.log("NOTHING WORKS")
       setErrors(err.response?.data);
     }
   };

@@ -13,7 +13,8 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useParams } from "react-router";
 import { useProfileData, useSetProfileData, } from "../../contexts/ProfileDataContext";
 import { axiosReq } from "../../api/axiosDefaults";
-import { Button, Image } from "react-bootstrap";
+import  Button from "react-bootstrap/Button";
+import Image from "react-bootstrap/Image";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import Post from "../posts/Post";
@@ -46,7 +47,9 @@ function ProfilePage() {
             setProfilePosts(profilePosts);
 
             setHasLoaded(true);
-        } catch (err) {console.log(err)}
+        } catch (err) {
+          // console.log(err)
+        }
     }
       fetchData();
   }, [id, setProfileData])
